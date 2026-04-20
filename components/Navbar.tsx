@@ -69,6 +69,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           className="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none group"
+          style={isOpen ? { position: 'absolute', top: '1.5rem', right: '1.5rem' } : {}}
           onClick={() => setIsOpen(!isOpen)}
         >
           <motion.span 

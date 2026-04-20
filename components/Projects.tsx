@@ -18,7 +18,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 md:py-32 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-24 md:py-32 px-6 max-w-6xl mx-auto relative z-10 bg-bg-base">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

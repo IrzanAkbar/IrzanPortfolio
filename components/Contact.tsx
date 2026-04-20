@@ -6,7 +6,7 @@ import { Github, Linkedin } from "lucide-react";
 
 const Contact = memo(function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 max-w-6xl mx-auto relative overflow-hidden flex flex-col items-center">
+    <section id="contact" className="py-24 md:py-32 px-6 max-w-6xl mx-auto relative overflow-hidden flex flex-col items-center z-20 bg-bg-base">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -18,10 +18,10 @@ const Contact = memo(function Contact() {
           {"// ESTABLISH_CONNECTION"}
         </span>
         <h2 className="font-serif text-5xl md:text-7xl font-light italic mb-6">
-          Let&apos;s Work Together
+          Mari Berkolaborasi
         </h2>
         <p className="font-mono text-sm text-text-muted tracking-widest max-w-md mx-auto mb-20 opacity-80">
-          Open for freelance & collaboration
+          Terbuka untuk belajar, kolaborasi, dan peluang baru.
         </p>
 
         {/* Sonar Circle Animation (CSS only) */}
@@ -32,19 +32,33 @@ const Contact = memo(function Contact() {
           
           <div className="pointer-events-auto">
             <a 
-              href="mailto:hello@adrian.abyss" 
+              href="mailto:Serarechannel@gmail.com" 
               className="font-serif text-3xl md:text-4xl text-accent hover:text-white transition-all underline decoration-accent/20 underline-offset-8"
             >
-              hello@adrian.abyss
+              Serarechannel@gmail.com
             </a>
           </div>
         </div>
 
         {/* Social Links Row */}
         <div className="flex justify-center gap-6 mb-32">
-          <SocialLink href="https://github.com" icon={<Github size={20} />} label="GitHub" />
-          <SocialLink href="https://linkedin.com" icon={<Linkedin size={20} />} label="LinkedIn" />
+          <SocialLink href="https://github.com/IrzanAkbar" icon={<Github size={20} />} label="GitHub" />
         </div>
+
+        {/* Closing Quote */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full flex flex-col items-center gap-8 mb-16"
+        >
+          <div className="w-full h-px bg-accent/10" />
+          <p className="font-serif italic text-3xl md:text-4xl text-text-primary opacity-60 text-center px-4 max-w-2xl">
+            &quot;Not just learning — I&apos;m building.&quot;
+          </p>
+          <div className="w-full h-px bg-accent/10" />
+        </motion.div>
       </motion.div>
 
       <footer className="w-full pt-10 border-t border-border-ocean/20 opacity-40">

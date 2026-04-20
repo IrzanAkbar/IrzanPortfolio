@@ -18,11 +18,11 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Adrian Sterling | Naval Architect & Creative Developer',
-  description: 'Confident, technical, and atmospheric personal portfolio of Adrian Sterling. Specializing in high-pressure digital systems and cinematic interfaces.',
+  title: "Zann — Web Developer & AI Builder",
+  description: "Portfolio Andi Irzan Akbar Hasanuddin, developer muda dari Indonesia yang membangun web apps dan AI tools.",
   openGraph: {
-    title: 'Adrian Sterling | Naval Architect & Creative Developer',
-    description: 'Cinematic deep-ocean portfolio experience.',
+    title: "Zann | Developer Portfolio",
+    description: "Portfolio Andi Irzan Akbar Hasanuddin, developer muda dari Indonesia yang membangun web apps dan AI tools.",
     type: 'website',
   },
 };

@@ -51,7 +51,7 @@ const Hero = memo(function Hero() {
     });
   }, [depthValue]);
 
-  const words = useMemo(() => ["Web Developer", "Frontend Engineer", "AI App Builder"], []);
+  const words = useMemo(() => ["Web Developer", "AI App Builder", "Bot Developer", "Junior Developer from Indonesia"], []);
   const typingText = useTypingEffect(words);
 
   const containerVariants = {
@@ -79,7 +79,7 @@ const Hero = memo(function Hero() {
   };
 
   return (
-    <section ref={containerRef} className="relative h-screen flex flex-col justify-center px-6 max-w-6xl mx-auto pt-20">
+    <section ref={containerRef} className="relative h-screen flex flex-col justify-center px-6 max-w-6xl mx-auto pt-20 overflow-hidden z-10">
       <div className="caustic-shimmer" />
       
       {/* Ambient Glow - CSS Only now */}
@@ -115,12 +115,19 @@ const Hero = memo(function Hero() {
           <motion.h1
             variants={itemVariants}
             layout={false}
-            className="font-serif text-[clamp(4rem,10vw,8rem)] font-light tracking-tighter leading-[0.85] mb-8"
+            className="font-serif text-[clamp(3.5rem,8vw,7rem)] font-light tracking-tighter leading-[0.85] mb-4"
             style={{ willChange: "transform" }}
           >
-            Adrian <br />
-            <span className="italic font-normal text-accent pl-12">Sterling</span>
+            Andi Irzan <br />
+            <span className="italic font-normal text-accent pl-12">Akbar Hasanuddin</span>
           </motion.h1>
+          
+          <motion.div 
+            variants={itemVariants}
+            className="font-mono text-xs text-text-muted mb-8 tracking-widest pl-12"
+          >
+            {"— known as Zann"}
+          </motion.div>
 
           <motion.div 
             variants={itemVariants} 
@@ -144,43 +151,68 @@ const Hero = memo(function Hero() {
           </motion.p>
         </motion.div>
 
-        {/* 4. Status Ping Row */}
+        {/* 4. Status Ping Row & Student Badge */}
         <motion.div 
           variants={itemVariants}
           layout={false}
-          className="flex items-center gap-6 mb-12"
+          className="flex flex-wrap items-center gap-6 mb-12"
           style={{ willChange: "transform" }}
         >
-          <div className="relative flex items-center justify-center w-6 h-6">
-            <div className="absolute w-full h-full border border-accent/15 rounded-full animate-[ping_3s_infinite]" style={{ animationDelay: "0ms" }} />
-            <div className="absolute w-full h-full border border-accent/15 rounded-full animate-[ping_3s_infinite]" style={{ animationDelay: "400ms" }} />
-            <div className="absolute w-full h-full border border-accent/15 rounded-full animate-[ping_3s_infinite]" style={{ animationDelay: "800ms" }} />
-            <div className="w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_10px_#38bdf8]" />
+          <div className="flex items-center gap-4">
+            <div className="relative flex items-center justify-center w-6 h-6">
+              <div className="absolute w-full h-full border border-accent/15 rounded-full animate-[ping_3s_infinite]" style={{ animationDelay: "0ms" }} />
+              <div className="absolute w-full h-full border border-accent/15 rounded-full animate-[ping_3s_infinite]" style={{ animationDelay: "400ms" }} />
+              <div className="absolute w-full h-full border border-accent/15 rounded-full animate-[ping_3s_infinite]" style={{ animationDelay: "800ms" }} />
+              <div className="w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_10px_#38bdf8]" />
+            </div>
+            <motion.span 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.7, type: "tween" }}
+              className="font-mono text-xs text-text-muted"
+            >
+              Available for collaboration
+            </motion.span>
           </div>
-          <motion.span 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.7, type: "tween" }}
-            className="font-mono text-xs text-text-muted"
-          >
-            Available for work
-          </motion.span>
+
+          <div className="group relative">
+            <div className="px-2 py-1 bg-bg-card/40 border border-accent/30 font-mono text-[10px] uppercase tracking-wider text-text-primary cursor-default">
+              {"// SMP — Developer Muda Indonesia"}
+            </div>
+            <div className="absolute bottom-full left-0 mb-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 bg-bg-surface border border-border-ocean px-3 py-1.5 text-[10px] font-mono text-accent whitespace-nowrap z-50">
+              Membangun produk nyata sejak SMP
+            </div>
+          </div>
         </motion.div>
 
-        {/* 5. CTA Button */}
-        <motion.div variants={itemVariants} layout={false} style={{ willChange: "transform" }}>
-          <motion.a
-            href="#projects"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-4 px-8 py-4 border border-accent/30 text-accent font-mono text-xs uppercase tracking-widest transition-all duration-300 relative group overflow-hidden hover:bg-accent/[0.08] hover:border-accent hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]"
-            style={{ willChange: "transform" }}
+        {/* 5. CTA Button & Quote */}
+        <div className="flex flex-col gap-10">
+          <motion.div variants={itemVariants} layout={false} style={{ willChange: "transform" }}>
+            <motion.a
+              href="#projects"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-4 px-8 py-4 border border-accent/30 text-accent font-mono text-xs uppercase tracking-widest transition-all duration-300 relative group overflow-hidden hover:bg-accent/[0.08] hover:border-accent hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]"
+              style={{ willChange: "transform" }}
+            >
+              <span className="relative z-10 transition-colors group-hover:text-white">Lihat Projects</span>
+              <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <div className="absolute inset-0 bg-accent transition-transform duration-300 -translate-x-full group-hover:translate-x-[-95%]" />
+            </motion.a>
+          </motion.div>
+
+          {/* Quote Signature */}
+          <motion.div 
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.6, duration: 0.8, ease: "easeOut" }}
+            className="pl-4 border-l-2 border-accent/40"
           >
-            <span className="relative z-10 transition-colors group-hover:text-white">Dive into Projects</span>
-            <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            <div className="absolute inset-0 bg-accent transition-transform duration-300 -translate-x-full group-hover:translate-x-[-95%]" />
-          </motion.a>
-        </motion.div>
+            <p className="font-serif italic text-lg text-text-muted">
+              &quot;Not just learning — I&apos;m building.&quot;
+            </p>
+          </motion.div>
+        </div>
       </motion.div>
 
       <motion.div
